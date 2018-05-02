@@ -1,3 +1,3 @@
-Route for importing recipes:  /api/import/recipes
+To import recipes:  /api/import/recipes
 
-Route for importing reviews:  /api/import/reviews
+To import reviews:  /api/import/reviews
