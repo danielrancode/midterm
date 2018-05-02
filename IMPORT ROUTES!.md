@@ -4,5 +4,5 @@
 # Route for importing reviews:
 /api/import/reviews
 
-Thank you!
+Thank you!/n
 Daniel
