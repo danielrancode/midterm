@@ -1,0 +1,66 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(45deg, hsl(207, 50%, 55%) 0%, hsla(340, 100%, 55%, 0) 70%), 
+    linear-gradient(135deg,hsl(227, 55%, 50%) 10%, hsla(225, 95%, 50%, 0) 80%), 
+    linear-gradient(225deg, hsl(176, 60%, 50%) 10%, hsla(140, 90%, 50%, 0) 80%), 
+    linear-gradient(315deg, hsl(307, 55%, 55%) 100%, hsla(35, 95%, 55%, 0) 70%);
+}
+
+button {
+  color: #FFF;
+  background-color: #33C3F0;
+  display: inline-block;
+  height: 38px;
+  padding: 0 30px;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 38px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  border-radius: 4px;
+  border: 1px solid #33C3F0;
+  cursor: pointer;
+  margin: 1rem;
+  margin-left: 0;
+}
+
+form {
+  padding: 1rem;
+}
+
+input[type="name"], input[type="title"], input[type="date"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+  height: 38px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  box-shadow: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+textarea {
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+}
+
+span {
+  height: 10%;
+  float: right;
+  cursor: pointer;
+}

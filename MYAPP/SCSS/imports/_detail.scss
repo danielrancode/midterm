@@ -1,0 +1,29 @@
+.detail {
+    padding: 1rem;
+
+    .wrap {
+    background: #eee;
+    max-width: 940px;
+    margin: 1rem;
+    display: flex;
+    @media(min-width: 940px){
+    margin: 2 auto;
+        }
+    }   
+
+    img {
+    width: 75%;
+    height: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    margin-right: 1rem;
+    }
+
+    h1 {
+    font-family: lobster;
+        a {
+            color: #666;
+            text-decoration: none;
+        }
+    }
+}

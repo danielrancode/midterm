@@ -1,0 +1,23 @@
+
+<div class="wrap detail">
+  <h1>{{ $ctrl.review.title }}</h1>
+  <img src="/img/restos/{{ $ctrl.review.image }}"/>
+  
+  <p>{{ $ctrl.review.description }}</p>
+  
+    <button ng-click="$ctrl.back()">Back</button>
+    <button ng-hide="$ctrl.editorEnabled" ng-click="$ctrl.toggleEditor($ctrl.review)">Edit</button>
+    
+    <div ng-show="$ctrl.editorEnabled">
+      <form ng-submit="$ctrl.saveReview($ctrl.review, $ctrl.review._id)" name="updateReview">
+        <input type="text" ng-model="$ctrl.review.name" required placeholder="Name" />
+        <input type="text" ng-model="$ctrl.review.title" required placeholder="Title" />
+        <input type="text" ng-model="$ctrl.review.date" required placeholder="Date" />
+        <textarea type="text" ng-model="$ctrl.review.description" required placeholder="Description"></textarea>
+        <input type="text" ng-model="$ctrl.review.image" required placeholder="Image" />
+        <button type="submit" value="Save">Save</button>
+      </form>
+      <button type="cancel" ng-click="$ctrl.toggleEditor()">Cancel</button>
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+<div class="wrap">
+    <ul>
+        <li>
+            <p>Filter: <input ng-model="$ctrl.query" /></p>
+            <p>Sort by:
+                <select ng-model="$ctrl.orderProp">
+                    <option value="title">Alphabetical</option>
+                    <option value="date">Newest</option>
+                </select>
+            </p>
+        </li>
+    </ul>
+</div>
+    
+<div class="wrap" ng-app="review-app">
+    <ul>
+        <li ng-repeat="review in reviews | filter:$ctrl.query | orderBy:$ctrl.orderProp"  class="fade">
+            <img src="img/restos/{{ review.image }}"/>
+            <div>
+                <h1><a ng-href="/reviews/{{ review._id }}">{{ review.title }}</a></h1>
+                <p>{{ review.description }}</p>
+            </div>
+            <span ng-click="deleteReview($index, review._id)">✖︎</span>
+        </li>
+    </ul>
+</div>
+
+<div class="wrap">
+    <form ng-submit="addReview(review)">
+        <input type="text" ng-model="review.name" required placeholder="Name" />
+        <input type="text" ng-model="review.title" required placeholder="Title" />
+        <input type="text" ng-model="review.date" required placeholder="Date" />
+        <textarea type="text" ng-model="review.description" required placeholder="Description"></textarea>
+        <input type="text" ng-model="review.image" required placeholder="Image" />
+        <button type="submit">Add Review</button>
+    </form>
+</div>
