@@ -15,45 +15,7 @@ app.config(function ($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);
 });
 
-  /* ***** FIRST DRAFT *****
-  $routeProvider.when('/', {
-    template: ''
-  })
-    .when('/home', {
-      template: ''
-  })
-  .when('/recipes', {
-      template: '<recipe-list></recipe-list>'
-  })
-  .when('/recipes/:recipeId', {
-    template: '<recipe-detail></recipe-detail>'
-  })
-  .when('/reviews', {
-    template: '<review-list></review-list>'
-  })
-  .when('/reviews/:reviewId', {
-    template: '<review-detail></review-detail>'
-  })
-  .when('/delivery', {
-    template: ''
-  })
-  .when('/about', {
-      template: ''
-  });
-  
-  ***** SECOND DRAFT *****
-  const routes = [{path: '/', tmplt: ''},
-                  {path: '/home', tmplt: ''},
-                  {path: '/recipes', tmplt: '<recipe-list />'},
-                  {path: '/recipes/:recipeId', tmplt: '<recipe-detail />'},
-                  {path: '/reviews', tmplt: '<review-list />'},
-                  {path: '/reviews/:reviewId', tmplt: '<review-detail />'},
-                  {path: '/delivery', tmplt: ''},
-                  {path: '/about', tmplt: ''}
-                  ];
-*/
-
-
+// ***** NavController *****
 app.controller('NavController', function($scope, $location) {
   $scope.isActive = function(viewLocation) {
     var active = viewLocation === $location.path();
@@ -63,13 +25,30 @@ app.controller('NavController', function($scope, $location) {
 });
 
 
-// navbar component
+// ***************** COMPONENTS ********************
+
+
+// ***** navbar  *****
 
 app.component('navbar', {
-  templateUrl: '/includes/navbar.html' 
+  templateUrl: '/includes/navbar.html',
+  // template: `
+  //     <nav ng-controller="NavController">
+  //       <div class="panels">
+  //         <div data-ng-repeat="item in navData" class="panel {{item.class}}" ng-class="{ active: isActive('{{item.path}}') }">
+  //           <a href="{{item.path}}">
+  //           {{item.title}}
+  //           </a>
+  //         </div>
+  //       </div>
+  //     </nav>`,
+    controller: function($scope) {
+      $scope.navData = navData;
+    }
   });
 
-// recipeList component
+
+// ***** recipeList *****
 
 app.component('recipeList', {
   templateUrl: '/includes/recipes.html',
@@ -92,7 +71,8 @@ app.component('recipeList', {
       }
   });
 
-// recipeDetail component
+
+// ***** recipeDetail *****
 
 app.component('recipeDetail', {
   templateUrl: '/includes/recipe.html',
@@ -111,7 +91,7 @@ app.component('recipeDetail', {
 });
 
 
-// reviewList component 
+// ***** reviewList *****
 
 app.component('reviewList', {
   templateUrl: '/includes/reviews.html',
@@ -135,7 +115,7 @@ app.component('reviewList', {
   });
 
 
-// reviewDetail component
+// ***** reviewDetail *****
 
 app.component('reviewDetail', {
   templateUrl: '/includes/review.html',
